@@ -1,23 +1,35 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import { css } from 'emotion'
+import React from 'react'
 
 import Layout from '../components/layout'
+import { StaticQuery, graphql } from 'gatsby'
 
-const header = css({
-  color: '#0505',
-})
+import '../styles/index.scss' 
 
-class IndexPage extends Component {
-  render() {
-    return (
-      <Layout>
-        <h1 className={header}>Hi people</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <Link to="/page-2/">Go to page 2</Link>
-      </Layout>
-    )
-  }
-}
-export default IndexPage
+
+const HomePageScaffolding = (content: any) => (
+  <Layout>
+    <h1>{content.title}</h1>
+    <p>Welcome to your new Gatsby site.</p>
+    <p>Now go build something great.</p>
+  </Layout>
+)
+
+const HomePage = () => (
+  <StaticQuery 
+  query={graphql`
+      query {
+        contentfulHomePage {
+          title
+          landingImage {
+            file {
+              url
+            }
+          }
+        }
+      }
+    `}
+  render = {data => (<HomePageScaffolding content={data.contentfulHomePage} />)}
+  />
+);
+
+export default HomePage
