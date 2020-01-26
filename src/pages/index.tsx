@@ -2,15 +2,23 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import { StaticQuery, graphql } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
 
 import '../styles/index.scss' 
 
 
-const HomePageScaffolding = (content: any) => (
+const HomePageScaffolding = (props: any) => (
   <Layout>
-    <h1>{content.title}</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <BackgroundImage className="landing-image hero is-fullheight"
+        fluid={props.content.landingImage.fluid} alt="background-image">
+        <div className="hero-body">
+          <div className="container has-text-centered">
+            <h1 className="title is-size-1 has-text-white is-spaced">
+                {props.content.title}
+            </h1>
+          </div>
+        </div>
+    </BackgroundImage>
   </Layout>
 )
 
@@ -21,8 +29,8 @@ const HomePage = () => (
         contentfulHomePage {
           title
           landingImage {
-            file {
-              url
+            fluid {
+              ...GatsbyContentfulFluid
             }
           }
         }

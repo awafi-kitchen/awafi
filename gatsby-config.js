@@ -23,10 +23,13 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
+        icon: 'src/images/awafi-favicon.png'
       },
     },
     `gatsby-plugin-typescript`,
     'gatsby-transformer-remark',
+    `gatsby-transformer-sharp`, 
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-contentful`,
       options: contentfulConfig,
