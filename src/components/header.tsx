@@ -14,15 +14,13 @@ const HeaderLinks = ( navbarClass: string ) => (
             Contact
         </AnchorLink>
     </div>
-)
+);
 
 const Header = () => (
     <nav className="header navbar is-transparent" role="navigation" aria-label="main navigation">
-        
-   {HeaderLinks("navbar-end is-hidden-mobile")}
-   {HeaderLinks("navbar-center is-hidden-tablet")}
-    
-
-    </nav>);
+        {HeaderLinks("navbar-end is-hidden-mobile")}
+        {HeaderLinks("navbar-center is-hidden-tablet")}
+    </nav>
+);
 
 export default Header;
