@@ -7,11 +7,13 @@ import BackgroundImage from 'gatsby-background-image'
 import Img from "gatsby-image/withIEPolyfill"
 
 import '../styles/index.scss' 
+import Header from '../components/header'
 
 
 const HomePageScaffolding = (props: any) => (
   <Layout>
     <div className="home-page">
+      <Header />
       <BackgroundImage className="landing-image hero is-fullheight"
         fluid={props.content.landingImage.fluid} alt="background-image">
         <div className="hero-body has-text-centered">
