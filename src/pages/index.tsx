@@ -36,6 +36,25 @@ const HomePageScaffolding = (props: any) => (
         </div>
       </BackgroundImage>
     </div>
+    <section className="section about-page" id="about">
+      <h1 className="title has-text-centered has-text-primary is-size-2 is-uppercase">
+        {props.content.aboutSection.title}
+      </h1>
+      <div className="columns">
+        <div className="column">
+          <div className="section">
+            {documentToReactComponents(props.content.aboutSection.description.json)}
+          </div>
+        </div>
+        <div className="column">
+          <div className="section">
+            <figure className="image">
+              <Img fluid={props.content.aboutSection.photo.fluid} alt="about-us-photo" />
+            </figure>
+          </div>
+        </div>
+      </div>  
+    </section>
   </Layout>
 )
 
@@ -56,6 +75,17 @@ const HomePage = () => (
           logo {
             fluid {
               ...GatsbyContentfulFluid
+            }
+          }
+          aboutSection {
+            title
+            description {
+              json
+            }
+            photo {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
             }
           }
         }
