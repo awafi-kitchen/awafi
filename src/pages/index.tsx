@@ -1,14 +1,15 @@
 import React from 'react'
-
-import Layout from '../components/layout'
 import { StaticQuery, graphql } from 'gatsby'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import BackgroundImage from 'gatsby-background-image'
 import Img from "gatsby-image/withIEPolyfill"
 
-import '../styles/index.scss' 
+import Layout from '../components/layout'
 import Header from '../components/header'
+
+import '../styles/index.scss' 
+import '../styles/about.scss' 
 
 
 const HomePageScaffolding = (props: any) => (
