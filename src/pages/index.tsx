@@ -2,23 +2,35 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import { StaticQuery, graphql } from 'gatsby'
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import BackgroundImage from 'gatsby-background-image'
+import Img from "gatsby-image/withIEPolyfill"
 
 import '../styles/index.scss' 
 
 
 const HomePageScaffolding = (props: any) => (
   <Layout>
-    <BackgroundImage className="landing-image hero is-fullheight"
+    <div className="home-page">
+      <BackgroundImage className="landing-image hero is-fullheight"
         fluid={props.content.landingImage.fluid} alt="background-image">
-        <div className="hero-body">
-          <div className="container has-text-centered">
-            <h1 className="title is-size-1 has-text-white is-spaced">
-                {props.content.title}
+        <div className="hero-body has-text-centered">
+          <div className="container">
+            <h1 className="title arabic is-size-2 is-size-3-mobile has-text-white is-uppercase">
+              {documentToReactComponents(props.content.arabicSubtitle.json)}
+            </h1>
+              <br />
+            <figure className="image awafi-logo">
+              <Img className="logo" fluid={props.content.logo.fluid} alt="awafi-logo" />
+            </figure>
+              <br />
+            <h1 className="title is-size-3 is-size-4-mobile has-text-white is-uppercase">
+              {documentToReactComponents(props.content.englishSubtitle.json)}
             </h1>
           </div>
         </div>
-    </BackgroundImage>
+      </BackgroundImage>
+    </div>
   </Layout>
 )
 
@@ -28,7 +40,18 @@ const HomePage = () => (
       query {
         contentfulHomePage {
           title
+          englishSubtitle {
+            json
+          }
+          arabicSubtitle {
+            json
+          }
           landingImage {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
+          logo {
             fluid {
               ...GatsbyContentfulFluid
             }
