@@ -4,13 +4,13 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const HeaderLinks = ( navbarClass: string ) => (
     <div className={navbarClass}>
-        <AnchorLink href="#about" className="navbar-item is-uppercase has-text-white">
+        <AnchorLink href="#about" className="navbar-item is-uppercase">
             About Us
         </AnchorLink>
-        <AnchorLink href="#events" className="navbar-item is-uppercase has-text-white">
+        <AnchorLink href="#events" className="navbar-item is-uppercase">
             Events
         </AnchorLink>
-        <AnchorLink href="#contact" className="navbar-item is-uppercase has-text-white">
+        <AnchorLink href="#contact" className="navbar-item is-uppercase">
             Contact
         </AnchorLink>
     </div>
