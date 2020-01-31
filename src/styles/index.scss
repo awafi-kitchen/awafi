@@ -23,7 +23,7 @@
             display: flex;
         }
     }
-    .logo {
+    .image {
         max-width: 400px;
         max-height: 400px;
         margin: 0.5rem auto;
@@ -37,6 +37,15 @@
             margin-bottom: 0rem;
             font-family: 'Tajawal', sans-serif;
         } 
+    }
+    .is-overlay {
+        height: fit-content;
+        margin-top: auto;
+        margin-bottom: 1rem;
+
+        .image:hover {
+            opacity: 0.75;
+        }
     }
 
 }

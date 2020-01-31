@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import { StaticQuery, graphql } from 'gatsby'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import BackgroundImage from 'gatsby-background-image'
 import Img from "gatsby-image/withIEPolyfill"
 
@@ -23,13 +24,19 @@ const HomePageScaffolding = (props: any) => (
             </h1>
               <br />
             <figure className="image awafi-logo">
-              <Img className="logo" fluid={props.content.logo.fluid} alt="awafi-logo" />
+              <Img fluid={props.content.logo.fluid} alt="awafi-logo" />
             </figure>
               <br />
             <h1 className="title is-size-3 is-size-4-mobile has-text-white is-uppercase">
               {documentToReactComponents(props.content.englishSubtitle.json)}
             </h1>
+            
           </div>
+          <AnchorLink href="#about" className="is-overlay">
+            <figure className="image is-32x32">
+              <img className="img-centered" src={require("../images/down-arrow.png")} alt="" />
+            </figure>
+          </AnchorLink>
         </div>
       </BackgroundImage>
     </div>

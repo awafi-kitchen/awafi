@@ -28,6 +28,7 @@
     "gatsby-transformer-sharp": "^2.3.13",
     "node-sass": "^4.13.1",
     "react": "^16.5.1",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "tslint": "^5.11.0",
