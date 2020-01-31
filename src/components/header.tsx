@@ -1,17 +1,18 @@
 import React from 'react'
-import { Link } from "gatsby";
+
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const HeaderLinks = ( navbarClass: string ) => (
     <div className={navbarClass}>
-        <Link to="/#about" className="navbar-item is-uppercase has-text-white">
+        <AnchorLink href="#about" className="navbar-item is-uppercase has-text-white">
             About Us
-        </Link>
-        <Link to="/#events" className="navbar-item is-uppercase has-text-white">
+        </AnchorLink>
+        <AnchorLink href="#events" className="navbar-item is-uppercase has-text-white">
             Events
-        </Link>
-        <Link to="/#contact" className="navbar-item is-uppercase has-text-white">
+        </AnchorLink>
+        <AnchorLink href="#contact" className="navbar-item is-uppercase has-text-white">
             Contact
-        </Link>
+        </AnchorLink>
     </div>
 )
 
