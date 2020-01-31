@@ -42,11 +42,6 @@ module.exports = {
             family: `Montserrat`,
             variants: [`400`,`400i`,`600`,`700`]
           },
-          {
-            family: `Tajawal`,
-            subsets: [`arabic`],
-            variants: [`400`,`400i`,`600`,`700`]
-          },
         ],
       },
     },

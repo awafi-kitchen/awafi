@@ -19,10 +19,6 @@ const HomePageScaffolding = (props: any) => (
         fluid={props.content.landingImage.fluid} alt="background-image">
         <div className="hero-body has-text-centered">
           <div className="container">
-            <h1 className="title arabic is-size-2 is-size-3-mobile has-text-white is-uppercase">
-              {documentToReactComponents(props.content.arabicSubtitle.json)}
-            </h1>
-              <br />
             <figure className="image awafi-logo">
               <Img fluid={props.content.logo.fluid} alt="awafi-logo" />
             </figure>
@@ -50,9 +46,6 @@ const HomePage = () => (
         contentfulHomePage {
           title
           englishSubtitle {
-            json
-          }
-          arabicSubtitle {
             json
           }
           landingImage {
