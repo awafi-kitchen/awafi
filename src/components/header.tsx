@@ -7,9 +7,9 @@ const HeaderLinks = ( navbarClass: string ) => (
         <AnchorLink href="#about" className="navbar-item is-uppercase">
             About Us
         </AnchorLink>
-        <AnchorLink href="#events" className="navbar-item is-uppercase">
+        {/* <AnchorLink href="#events" className="navbar-item is-uppercase">
             Events
-        </AnchorLink>
+        </AnchorLink> */}
         <AnchorLink href="#contact" className="navbar-item is-uppercase">
             Contact
         </AnchorLink>
