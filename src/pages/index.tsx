@@ -69,7 +69,7 @@ const HomePageScaffolding = (props: any) => (
             </span>
             <div className="field">
               { (props.content.contactSection.socialLinks).map( (link: any, i: number) =>
-                (<SocialIcon key={i} url={link} target="_blank" rel="noopener noreferrer" style={{ height: 60, width: 60 }} />) )
+                (<SocialIcon key={i} url={link} target="_blank" rel="noopener noreferrer" bgColor="#421E28" style={{ height: 60, width: 60 }} />) )
               }
             </div>
         </div>
