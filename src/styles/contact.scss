@@ -2,14 +2,11 @@
 
 
 .contact-page {
-    h6 {
-        margin: 1.5rem 0;
-    }
     b {
         font-weight: 600;
     }
     .field a {
-        margin: 0 1rem;
+        margin: 2rem 1rem 1rem 1rem;
         transition: transform 100ms ease-in-out;
         transform-origin: center;
         &:hover {
