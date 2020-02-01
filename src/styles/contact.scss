@@ -1,0 +1,20 @@
+@import "_vars.scss";
+
+
+.contact-page {
+    h6 {
+        margin: 1.5rem 0;
+    }
+    b {
+        font-weight: 600;
+    }
+    .field a {
+        margin: 0 1rem;
+        transition: transform 100ms ease-in-out;
+        transform-origin: center;
+        &:hover {
+            transform: scale(1.10);
+            opacity: 0.8;
+        }
+    }    
+}

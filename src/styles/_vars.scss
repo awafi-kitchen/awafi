@@ -1,12 +1,12 @@
 @import "../../node_modules/bulma/sass/utilities/functions.sass";
 
-$link: #003D57;
-$info: #003D57;
-$read-more: #37bc9b;
-
 $transparent: rgba(0,0,0,0);
 
 $primary: #421E28;
 $primary-invert: findColorInvert($primary);
+
+$link: $primary;
+
+$info: #FDF8EB;
 
 $family-primary: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;

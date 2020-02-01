@@ -4,12 +4,14 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import BackgroundImage from 'gatsby-background-image'
 import Img from "gatsby-image/withIEPolyfill"
+import { SocialIcon } from 'react-social-icons';
 
 import Layout from '../components/layout'
 import Header from '../components/header'
 
 import '../styles/index.scss' 
 import '../styles/about.scss' 
+import '../styles/contact.scss' 
 
 
 const HomePageScaffolding = (props: any) => (
@@ -56,6 +58,23 @@ const HomePageScaffolding = (props: any) => (
         </div>
       </div>  
     </section>
+    <section className="hero is-info contact-page" id="contact">
+      <div className="hero-body has-text-centered">
+        <div className="container">
+          <h1 className="title has-text-centered has-text-primary is-size-2 is-uppercase">
+            {props.content.contactSection.title}
+          </h1>
+            <span className="is-size-5 has-text-grey-dark">
+              {documentToReactComponents(props.content.contactSection.description.json)}
+            </span>
+            <div className="field">
+              { (props.content.contactSection.socialLinks).map( (link: any, i: number) =>
+                (<SocialIcon key={i} url={link} target="_blank" rel="noopener noreferrer" style={{ height: 60, width: 60 }} />) )
+              }
+            </div>
+        </div>
+      </div>
+    </section>
   </Layout>
 )
 
@@ -88,6 +107,13 @@ const HomePage = () => (
                 ...GatsbyContentfulFluid
               }
             }
+          }
+          contactSection {
+            title
+            description {
+              json
+            }
+            socialLinks
           }
         }
       }
