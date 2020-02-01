@@ -40,7 +40,7 @@ const HomePageScaffolding = (props: any) => (
       </BackgroundImage>
     </div>
     <section className="section about-page" id="about">
-      <h1 className="title has-text-centered has-text-primary is-size-2 is-uppercase">
+      <h1 className="title has-text-centered has-text-primary is-size-2 is-size-3-mobile is-uppercase">
         {props.content.aboutSection.title}
       </h1>
       <div className="columns">
@@ -61,10 +61,10 @@ const HomePageScaffolding = (props: any) => (
     <section className="hero is-info contact-page" id="contact">
       <div className="hero-body has-text-centered">
         <div className="container">
-          <h1 className="title has-text-centered has-text-primary is-size-2 is-uppercase">
+          <h1 className="title has-text-centered has-text-primary is-size-2 is-size-3-mobile is-uppercase">
             {props.content.contactSection.title}
           </h1>
-            <span className="is-size-5 has-text-grey-dark">
+            <span className="is-size-5 is-size-6-mobile has-text-grey-dark">
               {documentToReactComponents(props.content.contactSection.description.json)}
             </span>
             <div className="field">
