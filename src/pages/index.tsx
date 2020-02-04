@@ -5,6 +5,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import BackgroundImage from 'gatsby-background-image'
 import Img from "gatsby-image/withIEPolyfill"
 import { SocialIcon } from 'react-social-icons';
+import { TinyLetter } from 'react-tinyletter';
 
 import Layout from '../components/layout'
 import Header from '../components/header'
@@ -67,6 +68,14 @@ const HomePageScaffolding = (props: any) => (
             <span className="is-size-5 is-size-6-mobile has-text-grey-dark">
               {documentToReactComponents(props.content.contactSection.description.json)}
             </span>
+            <TinyLetter list="theawafikitchen" className="field has-addons has-addons-centered is-expanded">
+              <div className="control text-bar">
+                <input type="email" className="input" />
+              </div>
+              <div className="control">
+                <input type="submit" value="SUBSCRIBE" className="button is-primary" />
+              </div>
+            </TinyLetter>
             <div className="field">
               { (props.content.contactSection.socialLinks).map( (link: any, i: number) =>
                 (<SocialIcon key={i} url={link} target="_blank" rel="noopener noreferrer" bgColor="#421E28" style={{ height: 60, width: 60 }} />) )
