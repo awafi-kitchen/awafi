@@ -5,7 +5,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import BackgroundImage from 'gatsby-background-image'
 import Img from "gatsby-image/withIEPolyfill"
 import { SocialIcon } from 'react-social-icons';
-import { TinyLetter } from 'react-tinyletter';
+import { TinyLetter, Email, Submit } from 'react-tinyletter';
 
 import Layout from '../components/layout'
 import Header from '../components/header'
@@ -70,10 +70,10 @@ const HomePageScaffolding = (props: any) => (
             </span>
             <TinyLetter list="theawafikitchen" className="field has-addons has-addons-centered is-expanded">
               <div className="control text-bar">
-                <input type="email" className="input" />
+              <Email className="input" />
               </div>
               <div className="control">
-                <input type="submit" value="SUBSCRIBE" className="button is-primary" />
+                <Submit className="button is-primary" />
               </div>
             </TinyLetter>
             <div className="field">
