@@ -5,7 +5,6 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import BackgroundImage from 'gatsby-background-image'
 import Img from "gatsby-image/withIEPolyfill"
 import { SocialIcon } from 'react-social-icons';
-import { TinyLetter, Email, Submit } from 'react-tinyletter';
 
 import Layout from '../components/layout'
 import Header from '../components/header'
@@ -14,6 +13,19 @@ import '../styles/index.scss'
 import '../styles/about.scss' 
 import '../styles/contact.scss' 
 
+const TINYLETTER_URL = 'https://tinyletter.com/theawafikitchen';
+
+const ListservSubscribe = () => (
+<form className="field has-addons has-addons-centered is-expanded" action={TINYLETTER_URL} method="post" target="popupwindow">
+  <div className="control">
+    <input type="text" name="email" id="tlemail" className="input" />
+  </div>
+  <input type="hidden" value="1" name="embed"/>
+  <div className="control">
+    <input type="submit" value="Subscribe" className="button is-primary is-uppercase"  />
+  </div>
+</form>
+)
 
 const HomePageScaffolding = (props: any) => (
   <Layout>
@@ -68,14 +80,7 @@ const HomePageScaffolding = (props: any) => (
             <span className="is-size-5 is-size-6-mobile has-text-grey-dark">
               {documentToReactComponents(props.content.contactSection.description.json)}
             </span>
-            <TinyLetter list="theawafikitchen" className="field has-addons has-addons-centered is-expanded">
-              <div className="control text-bar">
-              <Email className="input" />
-              </div>
-              <div className="control">
-                <Submit className="button is-primary" />
-              </div>
-            </TinyLetter>
+            <ListservSubscribe />
             <div className="field">
               { (props.content.contactSection.socialLinks).map( (link: any, i: number) =>
                 (<SocialIcon key={i} url={link} target="_blank" rel="noopener noreferrer" bgColor="#421E28" style={{ height: 60, width: 60 }} />) )
