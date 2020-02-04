@@ -5,13 +5,27 @@
     b {
         font-weight: 600;
     }
+    hr {
+        height: 0px;
+        margin: 0.75rem 0;
+    }
+    form {
+        margin: 1.5rem 0;
+
+        .control:first-child {
+            @media screen and (min-width: $tablet) {
+                width: 300px;
+            }
+        }
+    }  
     .field a {
-        margin: 2rem 1rem 1rem 1rem;
+        margin: 1rem;
         transition: transform 100ms ease-in-out;
         transform-origin: center;
         &:hover {
             transform: scale(1.10);
             opacity: 0.8;
         }
-    }    
+    }  
+
 }
