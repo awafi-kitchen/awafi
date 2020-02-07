@@ -29,6 +29,7 @@ const ListservSubscribe = () => (
 
 const HomePageScaffolding = (props: any) => (
   <Layout>
+
     <div className="home-page">
       <Header />
       <BackgroundImage className="landing-image hero is-fullheight"
@@ -52,6 +53,7 @@ const HomePageScaffolding = (props: any) => (
         </div>
       </BackgroundImage>
     </div>
+
     <section className="section about-page" id="about">
       <h1 className="title has-text-centered has-text-primary is-size-2 is-size-3-mobile is-uppercase">
         {props.content.aboutSection.title}
@@ -62,7 +64,7 @@ const HomePageScaffolding = (props: any) => (
             {documentToReactComponents(props.content.aboutSection.description.json)}
           </div>
         </div>
-        <div className="column">
+        <div className="column is-hidden-mobile">
           <div className="section">
             <figure className="image">
               <Img fluid={props.content.aboutSection.photo.fluid} alt="about-us-photo" />
@@ -71,6 +73,11 @@ const HomePageScaffolding = (props: any) => (
         </div>
       </div>  
     </section>
+
+    <figure className="image is-hidden-tablet">
+      <Img fluid={props.content.aboutSection.photo.fluid} alt="about-us-photo" />
+    </figure>
+
     <section className="hero is-info contact-page" id="contact">
       <div className="hero-body has-text-centered">
         <div className="container">
@@ -89,6 +96,7 @@ const HomePageScaffolding = (props: any) => (
         </div>
       </div>
     </section>
+    
   </Layout>
 )
 
