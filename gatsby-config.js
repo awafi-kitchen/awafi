@@ -7,6 +7,8 @@ const contentfulConfig = {
   accessToken: process.env.ACCESS_TOKEN,
 }
 
+const PRIMARY_SITE_URL = `https://awafikitchen.com`
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Contentful TypeScript starter',
@@ -16,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
-        siteUrl: `https://www.awafikitchen.com`,
+        siteUrl: PRIMARY_SITE_URL,
       },
     },
     {
