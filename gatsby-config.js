@@ -19,6 +19,12 @@ module.exports = {
         siteUrl: `https://www.awafikitchen.com`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-159331737-1',
+      },
+    },
     'gatsby-plugin-sass',
     {
       resolve: `gatsby-plugin-manifest`,
