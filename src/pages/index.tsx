@@ -7,7 +7,6 @@ import Img from "gatsby-image/withIEPolyfill"
 import { SocialIcon } from 'react-social-icons';
 
 import Layout from '../components/layout'
-import Header from '../components/header'
 
 import '../styles/index.scss' 
 import '../styles/about.scss' 
@@ -31,7 +30,6 @@ const HomePageScaffolding = (props: any) => (
   <Layout>
 
     <div className="home-page">
-      <Header />
       <BackgroundImage className="landing-image hero is-fullheight"
         fluid={props.content.landingImage.fluid} alt="background-image">
         <div className="hero-body has-text-centered">

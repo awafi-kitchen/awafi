@@ -6,29 +6,7 @@
 @import "_vars.scss";
 @import "_custom.scss";
 
-
 .home-page {
-    .header {
-        width: 100%;
-        background-color: $transparent;
-        position: absolute;
-        
-        .navbar-end {
-            justify-content: flex-end;
-            margin-left: auto;
-            align-items: stretch;
-            display: flex;
-        }
-
-        .navbar-center {
-            justify-content: center;
-            display: flex;
-        }
-
-        .navbar-item {
-            letter-spacing: 1.5px;
-        }
-    }
     .image {
         max-width: 400px;
         max-height: 400px;

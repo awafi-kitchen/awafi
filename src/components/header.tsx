@@ -17,7 +17,7 @@ const HeaderLinks = ( navbarClass: string ) => (
 );
 
 const Header = () => (
-    <nav className="header navbar is-transparent" role="navigation" aria-label="main navigation">
+    <nav className="header navbar" role="navigation" aria-label="main navigation">
         {HeaderLinks("navbar-end is-hidden-mobile")}
         {HeaderLinks("navbar-center is-hidden-tablet")}
     </nav>

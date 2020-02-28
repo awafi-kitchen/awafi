@@ -1,5 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import Header from './header'
+import Footer from './footer'
+
+import '../styles/layout.scss' 
 
 type Props = {
   children: React.ReactNode
@@ -17,7 +21,9 @@ const Layout = ({ children }: Props) => (
       <html lang="en" />
     </Helmet>
     <div>
-      {children}
+      <Header />
+        {children}
+      <Footer />
     </div>
   </>
 

@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+@import "../../node_modules/bulma/sass/utilities/functions.sass";
+@import "~bulma/sass/utilities/initial-variables.sass";
+
+@import "_vars.scss";
+@import "_custom.scss";
+
+.header.navbar {
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    
+    .navbar-end {
+        justify-content: flex-end;
+        margin-left: auto;
+        align-items: stretch;
+        display: flex;
+    }
+
+    .navbar-center {
+        justify-content: center;
+        display: flex;
+    }
+
+    .navbar-item {
+        letter-spacing: 1.5px;
+    }
+}
+
+.footer {
+    .field {
+        @media screen and (min-width: $tablet) {
+            float: right;
+        }
+        a {
+            margin: 0 0.25rem;
+            transition: transform 100ms ease-in-out;
+            transform-origin: center;
+            &:hover {
+                transform: scale(1.10);
+            }
+        }
+    }  
+}
