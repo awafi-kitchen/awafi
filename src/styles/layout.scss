@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 @import "../../node_modules/bulma/sass/utilities/functions.sass";
-@import "~bulma/sass/utilities/initial-variables.sass";
 
 @import "_vars.scss";
 @import "_custom.scss";
@@ -26,6 +25,10 @@
     .navbar-item {
         letter-spacing: 1.5px;
     }
+}
+
+.page-content {
+    min-height: calc(100vh - 52px);
 }
 
 .footer {

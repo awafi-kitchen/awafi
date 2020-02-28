@@ -2,9 +2,15 @@ import React from 'react'
 import Layout from '../components/layout'
 
 const NotFoundPage = () => (
-  <Layout metadata={{title:"Page Not Found"}}>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+  <Layout metadata={{pageTitle:"Page Not Found"}}>
+    <div className="hero is-info is-fullheight">
+      <div className="hero-body has-text-centered">
+        <div className="container">
+          <h1 className="title has-text-primary">NOT FOUND</h1>
+          <p className="subtitle">You just found a page that doesn&#39;t exist... the sadness.</p>
+        </div>
+      </div>
+    </div>
   </Layout>
 )
 

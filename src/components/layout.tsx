@@ -63,7 +63,7 @@ const LayoutScaffolding = ({ metadata, children, defaultContent}: Props) => {
           <meta name="twitter:image:alt" content={title} />
       </Helmet>
       <Header />
-      <div>
+      <div className="page-content">
         {children}
       </div>
       <Footer />
