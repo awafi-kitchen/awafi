@@ -14,6 +14,7 @@ module.exports = {
     title: 'Gatsby Contentful TypeScript starter',
   },
   plugins: [
+    'gatsby-plugin-netlify',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
