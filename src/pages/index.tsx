@@ -38,9 +38,9 @@ const HomePageScaffolding = (props: any) => (
               <Img fluid={props.content.logo.fluid} alt="awafi-logo" />
             </figure>
               <br />
-            <h1 className="title is-size-3 is-size-4-mobile has-text-white is-uppercase">
+            <span className="title is-size-3 is-size-4-mobile has-text-white has-text-weight-semibold is-uppercase">
               {documentToReactComponents(props.content.englishSubtitle.json)}
-            </h1>
+            </span>
             
           </div>
           <AnchorLink href="#about" className="is-overlay">
