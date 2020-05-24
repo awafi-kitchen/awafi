@@ -1,0 +1,14 @@
+@import "_vars.scss";
+
+.ak-events-list {
+  .box {
+    max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  figure.image {
+    width: 150px;
+    height: 150px;
+    margin: 0.5rem 1.5rem 0.5rem 0.5rem;
+  }
+}

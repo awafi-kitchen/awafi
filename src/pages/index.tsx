@@ -35,6 +35,21 @@ const ListservSubscribe = () => (
   </form>
 );
 
+export const OutboundLink = (props: {
+  to: string;
+  className?: string;
+  children: React.ReactNode;
+}) => (
+  <a
+    className={props.className || ""}
+    href={props.to}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {props.children}
+  </a>
+);
+
 const HomePage = () => {
   const { contentfulHomePage } = useStaticQuery(graphql`
     query {
@@ -140,7 +155,7 @@ const HomePage = () => {
         />
       </figure>
 
-      <section className="hero is-info contact-page" id="contact">
+      <section className="hero is-info ak-contact-page" id="contact">
         <div className="hero-body has-text-centered">
           <div className="container">
             <h1 className="title has-text-centered has-text-primary is-size-2 is-size-3-mobile is-uppercase">

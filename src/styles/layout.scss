@@ -7,8 +7,10 @@
 
 .header.navbar {
   width: 100%;
-  background-color: transparent;
-  position: absolute;
+  &.is-transparent {
+    position: absolute;
+    background-color: transparent;
+  }
 
   $duration: 0.2s;
   $distance: 1px;
