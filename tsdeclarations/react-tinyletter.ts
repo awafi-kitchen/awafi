@@ -1,1 +1,1 @@
-declare module 'react-tinyletter';
+declare module "react-tinyletter";

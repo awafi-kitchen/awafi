@@ -7,29 +7,28 @@
 @import "_custom.scss";
 
 .home-page {
-    .image {
-        max-width: 400px;
-        max-height: 400px;
-        margin: 0.5rem auto;
+  .image {
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0.5rem auto;
+  }
+  .title {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    h1 {
+      font-weight: 600;
     }
-    .title {
-        font-size: 1.8rem;
-        letter-spacing: 2px; 
-        line-height: 1.3; 
-        h1 {
-            font-weight: 600;
-        }
-        
-    }
-    .is-overlay {
-        height: fit-content;
-        margin-top: auto;
-        margin-bottom: 1rem;
+  }
+  .is-overlay {
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: 1rem;
 
-        .image:hover {
-            opacity: 0.75;
-        }
+    .image:hover {
+      opacity: 0.75;
     }
+  }
 }
 
 @import "~bulma/bulma.sass";

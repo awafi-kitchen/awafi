@@ -1,15 +1,15 @@
 @import "../../node_modules/bulma/sass/utilities/functions.sass";
 @import "~bulma/sass/utilities/initial-variables.sass";
 
-$transparent: rgba(0,0,0,0);
+$transparent: rgba(0, 0, 0, 0);
 
-$primary: #421E28;
+$primary: #421e28;
 $primary-invert: findColorInvert($primary);
 
 $link: $primary;
 
-$info: #FDF8EB;
+$info: #fdf8eb;
 
-$family-primary: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$family-primary: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 $footer-padding: 1.5rem;
