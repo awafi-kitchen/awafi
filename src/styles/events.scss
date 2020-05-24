@@ -5,7 +5,18 @@
     max-width: 800px;
     margin-right: auto;
     margin-left: auto;
+
+    &.is-inactive {
+      opacity: 0.5;
+    }
+
+    .media-content {
+      .button {
+        margin-top: 1rem;
+      }
+    }
   }
+
   figure.image {
     width: 150px;
     height: 150px;

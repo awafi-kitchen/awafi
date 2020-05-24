@@ -1,6 +1,7 @@
 import React from "react";
-import { graphql, useStaticQuery} from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image/withIEPolyfill";
+import classnames from "classnames";
 
 import Layout from "../components/layout";
 
@@ -60,11 +61,17 @@ const EventsPage = () => {
               new Date(event2.date).valueOf() - new Date(event1.date).valueOf()
           )
           .map((event: any, i: number) => (
-            <div className="box" key={i}>
+            <div
+              className={classnames(
+                "box",
+                new Date(event.date) < today && "is-inactive"
+              )}
+              key={i}
+            >
               <div className="media">
                 <div className="media-left">
                   <figure className="image is-128x128">
-                    <Img fluid={event.thumbnail.fluid} alt={event.title} />{" "}
+                    <Img fluid={event.thumbnail.fluid} alt={event.title} />
                   </figure>
                 </div>
                 <div className="media-content">
@@ -72,16 +79,15 @@ const EventsPage = () => {
                     <h1 className="title is-size-3 has-text-primary is-spaced has-text-weight-semibold">
                       <OutboundLink to={event.link}>{event.title}</OutboundLink>
                     </h1>
-                    <h6>
-                      {formatDate(event.date)}
-                      <br />
+                    <h5>
                       {event.location}, {event.city}
-                    </h6>
-                    <br />
+                      <br />
+                      {formatDate(event.date)}
+                    </h5>
                     <div>
                       <OutboundLink
                         to={event.link}
-                        className="has-text-primary is-inline-block is-uppercase has-text-weight-semibold"
+                        className="button is-primary is-inline-block is-uppercase has-text-weight-light"
                       >
                         Check it out →
                       </OutboundLink>

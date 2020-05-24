@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import classnames from "classnames";
 
 const HeaderLinks = (navbarClass: string) => {
   return (
@@ -19,9 +20,11 @@ const HeaderLinks = (navbarClass: string) => {
 
 const Header = (props: { isLandingPage?: boolean }) => (
   <nav
-    className={
-      "header navbar " + (props.isLandingPage ? "is-transparent" : "is-info")
-    }
+    className={classnames(
+      "header",
+      "navbar",
+      props.isLandingPage ? "is-transparent" : "is-info"
+    )}
     role="navigation"
     aria-label="main navigation"
   >
