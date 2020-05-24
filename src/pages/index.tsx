@@ -36,7 +36,8 @@ const ListservSubscribe = () => (
 );
 
 const HomePage = () => {
-  const content = useStaticQuery(graphql`
+
+  const { contentfulHomePage } = useStaticQuery(graphql`
     query {
       contentfulHomePage {
         title
@@ -74,22 +75,25 @@ const HomePage = () => {
       }
     }
   `);
+  
   return (
     <Layout>
       <div className="home-page">
         <BackgroundImage
           className="landing-image hero is-fullheight"
-          fluid={content.landingImage.fluid}
+          fluid={contentfulHomePage.landingImage.fluid}
           alt="background-image"
         >
           <div className="hero-body has-text-centered">
             <div className="container">
               <figure className="image awafi-logo">
-                <Img fluid={content.logo.fluid} alt="awafi-logo" />
+                <Img fluid={contentfulHomePage.logo.fluid} alt="awafi-logo" />
               </figure>
               <br />
               <span className="title is-size-3 is-size-4-mobile has-text-white has-text-weight-semibold is-uppercase">
-                {documentToReactComponents(content.englishSubtitle.json)}
+                {documentToReactComponents(
+                  contentfulHomePage.englishSubtitle.json
+                )}
               </span>
             </div>
             <AnchorLink href="#about" className="is-overlay">
@@ -107,19 +111,21 @@ const HomePage = () => {
 
       <section className="section about-page" id="about">
         <h1 className="title has-text-centered has-text-primary is-size-2 is-size-3-mobile is-uppercase">
-          {content.aboutSection.title}
+          {contentfulHomePage.aboutSection.title}
         </h1>
         <div className="columns">
           <div className="column">
             <div className="section">
-              {documentToReactComponents(content.aboutSection.description.json)}
+              {documentToReactComponents(
+                contentfulHomePage.aboutSection.description.json
+              )}
             </div>
           </div>
           <div className="column is-hidden-mobile">
             <div className="section">
               <figure className="image">
                 <Img
-                  fluid={content.aboutSection.photo.fluid}
+                  fluid={contentfulHomePage.aboutSection.photo.fluid}
                   alt="about-us-photo"
                 />
               </figure>
@@ -129,23 +135,26 @@ const HomePage = () => {
       </section>
 
       <figure className="image is-hidden-tablet">
-        <Img fluid={content.aboutSection.photo.fluid} alt="about-us-photo" />
+        <Img
+          fluid={contentfulHomePage.aboutSection.photo.fluid}
+          alt="about-us-photo"
+        />
       </figure>
 
       <section className="hero is-info contact-page" id="contact">
         <div className="hero-body has-text-centered">
           <div className="container">
             <h1 className="title has-text-centered has-text-primary is-size-2 is-size-3-mobile is-uppercase">
-              {content.contactSection.title}
+              {contentfulHomePage.contactSection.title}
             </h1>
             <span className="is-size-5 is-size-6-mobile has-text-grey-dark">
               {documentToReactComponents(
-                content.contactSection.description.json
+                contentfulHomePage.contactSection.description.json
               )}
             </span>
             <ListservSubscribe />
             <div className="field">
-              {content.contactSection.socialLinks.map(
+              {contentfulHomePage.contactSection.socialLinks.map(
                 (link: any, i: number) => (
                   <SocialIcon
                     key={i}
