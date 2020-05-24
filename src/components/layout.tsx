@@ -4,7 +4,7 @@ import Header from "./header";
 import Footer from "./footer";
 
 import "../styles/layout.scss";
-import { StaticQuery, graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
 const SITE_TITLE_SUFFIX = " | Awafi Kitchen";
 const SITE_MAIN_URL = "https://www.awafikitchen.com";
@@ -16,31 +16,45 @@ type Props = {
   metadata?: {
     [key: string]: any;
   };
-  defaultContent?: {
-    metadata: Props["metadata"];
-  };
   children: React.ReactNode;
   isLandingPage?: boolean;
 };
 
 /** Component checks for custom metadata attributes, and then uses the default homepage values as a fallback */
-const LayoutScaffolding = ({ metadata, children, defaultContent }: Props) => {
+const Layout = ({ metadata, children, isLandingPage }: Props) => {
+  const { contentfulHomePage } = useStaticQuery(graphql`
+    query {
+      contentfulHomePage {
+        metadata {
+          pageTitle
+          pageDescription
+          keywords
+          shareImage {
+            file {
+              url
+            }
+          }
+        }
+      }
+    }
+  `);
+
   var title, description, keywords, shareImageURL;
-  if (defaultContent && defaultContent.metadata) {
+  if (contentfulHomePage && contentfulHomePage.metadata) {
     title =
       (metadata && metadata.pageTitle + SITE_TITLE_SUFFIX) ||
-      defaultContent.metadata.pageTitle;
+      contentfulHomePage.metadata.pageTitle;
     description =
       (metadata && metadata.pageDescription) ||
-      defaultContent.metadata.pageDescription;
+      contentfulHomePage.metadata.pageDescription;
     keywords =
-      (metadata && metadata.keywords) || defaultContent.metadata.keywords;
+      (metadata && metadata.keywords) || contentfulHomePage.metadata.keywords;
     shareImageURL =
       (metadata &&
         metadata.shareImage &&
         metadata.shareImage.file &&
         metadata.shareImage.file.url) ||
-      defaultContent.metadata.shareImage.file.url;
+      contentfulHomePage.metadata.shareImage.file.url;
   }
 
   return (
@@ -67,39 +81,11 @@ const LayoutScaffolding = ({ metadata, children, defaultContent }: Props) => {
         <meta name="twitter:image" content={encodeURI(shareImageURL)} />
         <meta name="twitter:image:alt" content={title} />
       </Helmet>
-      <Header />
+      <Header isLandingPage={isLandingPage || false} />
       <div className="page-content">{children}</div>
       <Footer />
     </>
   );
 };
-
-const Layout = ({ metadata, children }: Props) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        contentfulHomePage {
-          metadata {
-            pageTitle
-            pageDescription
-            keywords
-            shareImage {
-              file {
-                url
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={(data) => (
-      <LayoutScaffolding
-        metadata={metadata}
-        defaultContent={data.contentfulHomePage}
-        children={children}
-      />
-    )}
-  />
-);
 
 export default Layout;

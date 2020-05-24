@@ -36,7 +36,6 @@ const ListservSubscribe = () => (
 );
 
 const HomePage = () => {
-
   const { contentfulHomePage } = useStaticQuery(graphql`
     query {
       contentfulHomePage {
@@ -75,9 +74,9 @@ const HomePage = () => {
       }
     }
   `);
-  
+
   return (
-    <Layout>
+    <Layout isLandingPage>
       <div className="home-page">
         <BackgroundImage
           className="landing-image hero is-fullheight"
