@@ -10,16 +10,21 @@
       opacity: 0.5;
     }
 
-    .media-content {
-      .button {
-        margin-top: 1rem;
+    .media-content .button {
+      margin-top: 1rem;
+    }
+
+    .media-left,
+    .media-right {
+      @media screen and (max-width: $tablet) {
+        margin: 0;
       }
     }
-  }
 
-  figure.image {
-    width: 150px;
-    height: 150px;
-    margin: 0.5rem 1.5rem 0.5rem 0.5rem;
+    figure.image {
+      width: 150px;
+      height: 150px;
+      margin: 0.5rem 1.5rem 0.5rem 0.5rem;
+    }
   }
 }
