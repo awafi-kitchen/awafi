@@ -61,7 +61,8 @@ const EventsPage = () => {
                   <OutboundLink to={event.link}>{event.title}</OutboundLink>
                 </h1>
                 <h5>
-                  {event.location}, {event.city}
+                  {event.location}
+                  {event.city && `, ${event.city}`}
                   <br />
                   {formatDate(event.date)}
                 </h5>
