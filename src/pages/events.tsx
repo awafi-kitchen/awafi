@@ -19,9 +19,6 @@ const EventsPage = () => {
     query {
       contentfulEventsPage {
         title
-        subtitle
-        upcomingEventsHeader
-        pastEventsHeader
         events {
           title
           date
@@ -48,9 +45,6 @@ const EventsPage = () => {
             <h1 className="title has-text-centered has-text-primary is-size-2 is-size-3-mobile is-uppercase">
               {contentfulEventsPage.title}
             </h1>
-            <span className="is-size-5 is-size-6-mobile has-text-grey-dark">
-              {contentfulEventsPage.subtitle}
-            </span>
           </div>
         </div>
       </section>
