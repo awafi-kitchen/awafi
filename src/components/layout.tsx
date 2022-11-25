@@ -81,7 +81,7 @@ const Layout = ({ metadata, children, isLandingPage }: Props) => {
         <meta name="twitter:image" content={encodeURI(shareImageURL)} />
         <meta name="twitter:image:alt" content={title} />
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
       </Helmet>
       <Header isLandingPage={isLandingPage || false} />
       <div className="page-content">{children}</div>
