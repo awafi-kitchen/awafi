@@ -7,7 +7,7 @@ import "../styles/layout.scss";
 import { graphql, useStaticQuery } from "gatsby";
 
 const SITE_TITLE_SUFFIX = " | Awafi Kitchen";
-const SITE_MAIN_URL = "https://www.awafikitchen.com";
+const SITE_MAIN_URL = "https://www.theawafikitchen.com";
 const FB_APP_ID = "197813957975773";
 
 // import './layout.css'
