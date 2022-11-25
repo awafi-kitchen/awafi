@@ -49,16 +49,5 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: contentfulConfig,
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Montserrat`,
-            variants: [`400`, `400i`, `600`, `700`],
-          },
-        ],
-      },
-    },
   ],
 };
