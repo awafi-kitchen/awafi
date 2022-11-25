@@ -7,7 +7,7 @@ const contentfulConfig = {
   accessToken: process.env.ACCESS_TOKEN,
 };
 
-const PRIMARY_SITE_URL = `https://awafikitchen.com`;
+const PRIMARY_SITE_URL = `https://theawafikitchen.com`;
 
 module.exports = {
   siteMetadata: {
